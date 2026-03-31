@@ -31,7 +31,7 @@
     }
 
     * {
-      scroll-margin-top: 15px;
+      scroll-margin-top: 26px;
     }
 
     body {
@@ -485,6 +485,19 @@
       min-height: 140px;
     }
 
+.form-group input[type="file"] {
+  padding: 10px;
+  background: #11151d;
+  border: 1px dashed #2a3040;
+  border-radius: 12px;
+  color: #8e96a3;
+  cursor: pointer;
+}
+
+.form-group input[type="file"]:hover {
+  border-color: #d9a441;
+}
+
     .model-help {
   margin: 48px 0;
   padding: 28px;
@@ -859,7 +872,7 @@
         <a href="#sluzby">Služby</a>
         <a href="#ukazky">Ukážky</a>
         <a href="#cennik">Cenník</a>
-        <a href="#nacenenie">Nacenenie</a>
+        <a href="#nacenenie">Kontakt</a>
       </nav>
     </div>
   </header>
@@ -1175,7 +1188,7 @@
                 Ak ti viac vyhovuje priama komunikácia, ozvi sa mi aj cez e-mail alebo zavolaj.
               </p>
               <ul class="contact-list">
-                <li><strong>E-mail:</strong> hies3dstudio@gmail.com</li>
+                <li><strong>E-mail:</strong> info@h3ds.sk</li>
                 <li><strong>Telefón:</strong> +421 904 342 570</li>
                 <li><strong>Adresa:</strong> Čaňa 04414, Košice-okolie</li>
                 <li><a href="https://instagram.com/hitaes3dstudio" target="_blank" class="contact-instagram">
@@ -1218,7 +1231,11 @@
 
               <div class="form-group">
                 <label for="message">Poznámka</label>
-                <textarea id="message" name="Poznamka" rows="6" placeholder="Napíš čo najviac detailov – veľkosť, účel, termín, špeciálne požiadavky..."></textarea>
+                <textarea id="message" name="Poznamka" rows="6" placeholder="Napíš párdetailov čo si predstavuješ"></textarea>
+                <div class="form-group">
+  <label for="file">Prilož model alebo fotku (max 20MB spolu)</label>
+  <input type="file" id="file" name="file" multiple>
+</div>
               </div>
 
               <button type="submit" class="btn btn-primary">Poslať dopyt</button>
