@@ -814,10 +814,6 @@
   animation: machinesLoop 35s linear infinite;
 }
 
-.machines-slider:hover .machines-track {
-  animation-play-state: paused;
-}
-
 .machine-card {
   flex: 0 0 160px;
   border-radius: 14px;
@@ -840,6 +836,10 @@
   font-size: 14px;
   color: #aaa;
   line-height: 1.4;
+}
+
+.machine-card {
+  -webkit-tap-highlight-color: transparent;
 }
 
 .machine-card:hover {
