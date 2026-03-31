@@ -779,28 +779,30 @@
 
 .machines {
   margin-top: 28px;
+  overflow: hidden;
 }
 
-.machines-grid {
+.machines h3 {
+  margin-bottom: 14px;
+}
+
+.machines-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.machines-track {
   display: flex;
   gap: 18px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-  scroll-behavior: smooth;
+  width: max-content;
+  animation: machinesLoop 35s linear infinite;
 }
 
-.machines-grid::-webkit-scrollbar {
-  height: 8px;
-}
-
-.machines-grid::-webkit-scrollbar-track {
-  background: rgba(255,255,255,0.03);
-  border-radius: 999px;
-}
-
-.machines-grid::-webkit-scrollbar-thumb {
-  background: rgba(240,196,107,0.35);
-  border-radius: 999px;
+.machines-slider:hover .machines-track {
+  animation-play-state: paused;
 }
 
 .machine-card {
@@ -831,6 +833,15 @@
   border: 1px solid #f0c674;
   box-shadow: 0 0 20px rgba(240,198,116,0.25);
   transform: translateY(-3px);
+}
+
+@keyframes machinesLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 9px));
+  }
 }
 
   </style>
@@ -950,50 +961,6 @@
       </div>
     </section>
 
-    <section class="team">
-      <div class="container">
-        <h2>Tím za Vaším projektom</h2>
-
-        <div class="team-grid">
-          <div class="team-card">
-            <div class="team-person">
-              <div class="team-photo-wrap">
-                <img src="mg.png" alt="Michal Gabanyi" class="team-photo">
-              </div>
-
-              <div class="team-info">
-                <h3>Michal Gabanyi</h3>
-                <p class="team-role">SLA / MSLA Expert, maľovanie a post-process</p>
-                <p class="team-desc">
-                  Venujem sa detailnej resin tlači, čisteniu modelov a príprave na maľovanie.
-                  Zameriavam sa hlavne na figúrky, busty a zberateľské kusy, kde rozhodujú detaily,
-                  čistý povrch a celkový výsledný dojem.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="team-card">
-            <div class="team-person">
-              <div class="team-photo-wrap">
-                <img src="mh.png" alt="Michal Hudák" class="team-photo">
-              </div>
-
-              <div class="team-info">
-                <h3>Michal Hudák</h3>
-                <p class="team-role">FDM Expert, 3D modelovanie a web design</p>
-                <p class="team-desc">
-                  Mám za sebou 25 rokov skúseností v 3D aj 2D grafike.
-                  Zameriava sa na funkčné riešenia, presnosť a praktické využitie výsledného modelu.
-                  Popri tom sa venuje aj tvorbe webových stránok a technickej realizácii projektov.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="ukazky">
       <div class="container">
         <div class="section-title">
@@ -1045,7 +1012,8 @@
             <div class="machines">
   <h3>Naše stroje</h3>
 
-  <div class="machines-grid">
+ <div class="machines-slider">
+  <div class="machines-track">
     <div class="machine-card">
       <img src="m5.jpg" alt="SLA tlačiareň">
       <p>SLA – Elegoo Mars 5 Ultra 8K</p>
@@ -1056,7 +1024,7 @@
       <p>2x SLA – Elegoo Saturn 4 Ultra 12K</p>
     </div>
 
-   <div class="machine-card">
+    <div class="machine-card">
       <img src="k2.jpg" alt="FDM tlačiareň">
       <p>2x FDM – Creality K2 Plus</p>
     </div>
@@ -1077,7 +1045,7 @@
     </div>
 
     <div class="machine-card">
-      <img src="l.jpg" alt="FDM tlačiareň">
+      <img src="l.jpg" alt="Laser">
       <p>Elegoo Laser Engraver & Cutter 20W +</p>
     </div>
   </div>
@@ -1259,6 +1227,51 @@
         </div>
       </div>
     </section>
+
+    <section class="team">
+      <div class="container">
+        <h2>Tím za Vaším projektom</h2>
+
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-person">
+              <div class="team-photo-wrap">
+                <img src="mg.png" alt="Michal Gabanyi" class="team-photo">
+              </div>
+
+              <div class="team-info">
+                <h3>Michal Gabanyi</h3>
+                <p class="team-role">SLA / MSLA Expert, maľovanie a post-process</p>
+                <p class="team-desc">
+                  Venujem sa detailnej resin tlači, čisteniu modelov a príprave na maľovanie.
+                  Zameriavam sa hlavne na figúrky, busty a zberateľské kusy, kde rozhodujú detaily,
+                  čistý povrch a celkový výsledný dojem.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-person">
+              <div class="team-photo-wrap">
+                <img src="mh.png" alt="Michal Hudák" class="team-photo">
+              </div>
+
+              <div class="team-info">
+                <h3>Michal Hudák</h3>
+                <p class="team-role">FDM Expert, 3D modelovanie a web design</p>
+                <p class="team-desc">
+                  Mám za sebou 25 rokov skúseností v 3D aj 2D grafike.
+                  Zameriava sa na funkčné riešenia, presnosť a praktické využitie výsledného modelu.
+                  Popri tom sa venuje aj tvorbe webových stránok a technickej realizácii projektov.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -1282,6 +1295,14 @@
       });
     });
   </script>
+
+<script>
+  const machineTrack = document.querySelector('.machines-track');
+
+  if (machineTrack) {
+    machineTrack.innerHTML += machineTrack.innerHTML;
+  }
+</script>
 
 </body>
 </html>
