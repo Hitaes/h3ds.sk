@@ -811,7 +811,7 @@
   display: flex;
   gap: 18px;
   width: max-content;
-  animation: machinesLoop 70s linear infinite;
+  animation: machinesLoop 50s linear infinite;
 }
 
 .machine-card {
@@ -822,6 +822,7 @@
   transition: 0.25s ease;
   border: 1px solid rgba(255,255,255,0.06);
   background: rgba(255,255,255,0.03);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .machine-card img {
@@ -838,10 +839,6 @@
   line-height: 1.4;
 }
 
-.machine-card {
-  -webkit-tap-highlight-color: transparent;
-}
-
 .machine-card:hover {
   border: 1px solid #f0c674;
   box-shadow: 0 0 20px rgba(240,198,116,0.25);
@@ -854,6 +851,25 @@
   }
   to {
     transform: translateX(calc(-50% - 9px));
+  }
+}
+
+@media (max-width: 768px) {
+  .machines-slider {
+    overflow-x: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
+    padding-bottom: 6px;
+  }
+
+  .machines-track {
+    animation: none;
+    width: max-content;
+    gap: 12px;
+  }
+
+  .machine-card {
+    flex: 0 0 140px;
   }
 }
 
@@ -1316,7 +1332,7 @@
 <script>
   const machineTrack = document.querySelector('.machines-track');
 
-  if (machineTrack) {
+  if (machineTrack && window.innerWidth > 768) {
     machineTrack.innerHTML += machineTrack.innerHTML;
   }
 </script>
